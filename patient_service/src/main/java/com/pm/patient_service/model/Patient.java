@@ -3,11 +3,13 @@ package com.pm.patient_service.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
+@Data
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,24 +31,4 @@ public class Patient {
 
     @NotNull
     private LocalDate registeredDate;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
 }
