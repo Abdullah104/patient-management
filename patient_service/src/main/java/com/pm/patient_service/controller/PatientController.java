@@ -4,7 +4,6 @@ import com.pm.patient_service.dto.PatientRequestDTO;
 import com.pm.patient_service.dto.PatientResponseDTO;
 import com.pm.patient_service.dto.validators.CreatePatientValidationGroup;
 import com.pm.patient_service.service.PatientService;
-import jakarta.validation.Valid;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -38,5 +37,12 @@ public class PatientController {
     @PutMapping("/{id}")
     public ResponseEntity<PatientResponseDTO> updatePatient(@PathVariable UUID id, @Validated({Default.class}) @RequestBody PatientRequestDTO patientRequestDTO) {
         return ResponseEntity.ok().body(patientService.updatePatient(id, patientRequestDTO));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePatient(@PathVariable UUID id) {
+        patientService.deletePatient(id);
+
+        return ResponseEntity.noContent().build();
     }
 }
