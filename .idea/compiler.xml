@@ -10,6 +10,9 @@
       <module name="analytics_service" options="-parameters" />
       <module name="analytics_service.main" options="-parameters" />
       <module name="analytics_service.test" options="-parameters" />
+      <module name="api_gateway" options="-parameters" />
+      <module name="api_gateway.main" options="-parameters" />
+      <module name="api_gateway.test" options="-parameters" />
       <module name="billing-service" options="-parameters" />
       <module name="billing-service.main" options="-parameters" />
       <module name="billing-service.test" options="-parameters" />
