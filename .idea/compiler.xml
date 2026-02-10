@@ -12,6 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api_gateway.test" target="25" />
       <module name="auth-service.test" target="25" />
     </bytecodeTargetLevel>
   </component>
