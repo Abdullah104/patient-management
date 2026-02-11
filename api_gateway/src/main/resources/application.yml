@@ -22,13 +22,25 @@ spring:
               filters:
                 - RewritePath=/api-docs/patients,/v3/api-docs
 
+            - id: api-docs-auth-route
+              uri: http://auth-service:4005
+              predicates:
+                - Path=/api-docs/auth
+              filters:
+                - RewritePath=/api-docs/auth,/v3/api-docs
+
             - id: swagger-ui-route
               uri: http://patient-service:4000
               predicates:
                 - Path=/swagger-ui.html,/swagger-ui/**
 
-            - id: openapi-route
+            - id: patients-openapi-route
               uri: http://patient-service:4000
+              predicates:
+                - Path=/v3/api-docs,/v3/api-docs/**
+
+            - id: auth-openapi-route
+              uri: http://auth-service:4005
               predicates:
                 - Path=/v3/api-docs,/v3/api-docs/**
 
